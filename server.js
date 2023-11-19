@@ -1,14 +1,14 @@
 const express = require("express");
-// const dotenv = require("dotenv").config();
+const dotenv = require("dotenv").config();
 // const router = require("./routes/contactRoutes");
 // const errorHandler = require("./middleware/errorhandler");
-// const connectDb = require("./config/dbConnection");
+const connectDb = require("./config/dbConnection");
 // const userRouter = require("./routes/userRoutes");
 
-//connectDb();
+connectDb();
 const app = express();
 
-const port = 3000 || 5001;
+const port = process.env.PORT || 5001;
 
 app.use(express.json())
 // app.use("/api/contacts", router )
