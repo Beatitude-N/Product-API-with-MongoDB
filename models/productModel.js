@@ -1,27 +1,28 @@
 const mongoose = require("mongoose")
 
 const productSchema = mongoose.Schema({
+    
     name: {
         type: String,
         required: [true, "Please enter the product name"],
     },
-    username: {
-        type: String,
-        required: [true, "Please add the contact user name"],
-        unique: [true, "Username already taken"],
+    quantity: {
+        type: Number,
+        required: [true, "Please enter the product quantity"],
+        default: 0,
     },
-    email: {
-        type: String,
-        required: [true, "Please add the user email address"],
-        unique: [true, "Username already taken"],
+    price: {
+        type: Number,
+        required: [true, "Please enter the product price"],
     },
-    password: {
-        type: String,
-        required: [true, "Please add the user password"],
+    image: {
+        type: Number,
     },
+
 },
 {
     timestamps: true,
 })
 
-module.exports = mongoose.model("user", userSchema);   
+const Product = mongoose.model("product", productSchema);   
+module.exports = Product
